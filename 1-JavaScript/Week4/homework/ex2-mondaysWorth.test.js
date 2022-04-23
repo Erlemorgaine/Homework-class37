@@ -48,4 +48,13 @@ describe('computeEarnings', () => {
     const expected = '€187.50';
     expect(result).toBe(expected);
   });
+
+  test('should be able to be used on any array of objects containing a duration property with a number value', () => {
+    const result = computeEarnings(
+      [{ duration: 60 }, { duration: 60 }],
+      hourlyRate
+    );
+    const expected = '€50.00';
+    expect(result).toBe(expected);
+  });
 });
